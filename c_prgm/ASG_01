@@ -8,9 +8,9 @@ int main() {
     scanf("%d", &n);
 
     if (n % 2 == 0)
-        printf("%d is Even\n", n);
+        printf("%d is Even", n);
     else
-        printf("%d is Odd\n", n);
+        printf("%d is Odd", n);
 
     return 0;
 }
@@ -21,7 +21,7 @@ int main() {
 
 int main() {
     int n, original, rev = 0;
-    printf("Enter a 3-digit number: ");
+    printf("Enter number: ");
     scanf("%d", &n);
 
     original = n;
@@ -32,9 +32,9 @@ int main() {
     }
 
     if (original == rev)
-        printf("Palindrome\n");
+        printf("Palindrome");
     else
-        printf("Not Palindrome\n");
+        printf("Not Palindrome");
 
     return 0;
 }
@@ -48,9 +48,9 @@ int main() {
     scanf("%d", &year);
 
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-        printf("%d is a Leap Year\n", year);
+        printf("%d is a Leap Year", year);
     else
-        printf("%d is Not a Leap Year\n", year);
+        printf("%d is Not a Leap Year", year);
 
     return 0;
 }
@@ -68,7 +68,7 @@ int main() {
         ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
         printf("%c is a Vowel\n", ch);
     else
-        printf("%c is a Consonant\n", ch);
+        printf("%c is a Consonant", ch);
 
     return 0;
 }
@@ -83,9 +83,9 @@ int main() {
     scanf("%d", &age);
 
     if (age >= 18)
-        printf("Eligible to Vote\n");
+        printf("Eligible to Vote");
     else
-        printf("Not Eligible to Vote\n");
+        printf("Not Eligible to Vote");
 
     return 0;
 }
