@@ -1,1 +1,177 @@
+01_Perfect_no
+---------------------------------------
+#include <stdio.h>
+int perNo(int n){
+	int sum=0;
+	for(int i=1;i<n;i++){
+		if(n%i==0){
+			sum=sum+i;
+		}
+	}
+	return sum==n;
+}
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++){
+    	if (perNo(i)) {
+            printf("%d\n", i); 
+        }
+	}
+    return 0;
+}
+-------------------------
+02_strong no
+-------------------------
+#include <stdio.h>
+
+int fact();
+int stNo();
+
+int fact(int n){
+	int f=1;
+	for(int i=1;i<=n;i++){
+		f=f*i;
+	}
+	return f;
+}
+
+int stNo(int n){
+	int sum=0;
+	int temp=n;
+	while(n!=0){
+		int n1=n%10;
+		n=n/10;
+		sum=sum+fact(n1);
+ }
+	return sum==temp;
+}
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++){
+    	  if(stNo(i))
+            printf("%d\n", i); 
+	}
+    return 0;
+}
+
+----------------------
+03_menu driven program
+----------------------
+
+#include <stdio.h>
+
+
+void is_EorO(int n);
+void is_Prime(int n);
+void is_Pdm(int n);
+void is_PNZ(int n);
+void rev(int n);
+void sum_No(int n);
+
+void is_EorO(int n) {
+    if (n % 2 == 0) {
+        printf("%d is Even\n", n);
+    } else {
+        printf("%d is Odd\n", n);
+    }
+}
+
+void is_Prime(int n) {
+    if (n < 2) {
+        printf("%d is Not Prime\n", n);
+        return;
+    }
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d is Not Prime\n", n);
+            return;
+        }
+    }
+    printf("%d is Prime\n", n);
+}
+
+void is_Pdm(int n) {
+    int reversed = 0, original = n, digit;
+    while (n != 0) {
+        digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n /= 10;
+    }
+    if (reversed == original)
+        printf("%d is a Palindrome\n", original);
+    else
+        printf("%d is not a Palindrome\n", original);
+}
+
+void is_PNZ(int n) {
+    if (n > 0)
+        printf("%d is Positive\n", n);
+    else if (n < 0)
+        printf("%d is Negative\n", n);
+    else
+        printf("The number is Zero\n");
+}
+
+void rev(int n) {
+    int reversed = 0, digit;
+    while (n != 0) {
+        digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n /= 10;
+    }
+    printf("Reversed number: %d\n", reversed);
+}
+
+void sum_No(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; i++) {
+        sum += i;
+    }
+    printf("Sum of numbers from 1 to %d is %d\n", n, sum);
+}
+
+int main() {
+    int choice, n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Choose operation:\n");
+    printf("1. Check Even or Odd\n");
+    printf("2. Check Prime\n");
+    printf("3. Check Palindrome\n");
+    printf("4. Check Positive/Negative/Zero\n");
+    printf("5. Reverse the Number\n");
+    printf("6. Sum up to the Number\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            is_EorO(n);
+            break;
+        case 2:
+            is_Prime(n);
+            break;
+        case 3:
+            is_Pdm(n);
+            break;
+        case 4:
+            is_PNZ(n);
+            break;
+        case 5:
+            rev(n);
+            break;
+        case 6:
+            sum_No(n);
+            break;
+        default:
+            printf("Invalid choice\n");
+    }
+
+    return 0;
+}
 
