@@ -1,1 +1,228 @@
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+01_Print numbers from 1 to 10
+_______________________________________
+#include <stdio.h>
 
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d ", i);
+    }
+    return 0;
+}
+_________________________________________
+02_Print multiplication table of 5
+__________________________________________
+
+#include <stdio.h>
+
+int main() {
+    int n = 5;
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\n", i * n);
+    }
+    return 0;
+}
+__________________________________________
+03_Sum from 1 to 5
+___________________________________________
+#include <stdio.h>
+
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 5; i++) {
+        sum += i;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+______________________________________________
+04_Check Prime
+_____________________________________________
+
+#include <stdio.h>
+
+int isPrime(int n) {
+    if (n < 2) return 0;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int n = 7;
+    if (isPrime(n)) {
+        printf("prime");
+    } else {
+        printf("not prime");
+    }
+    return 0;
+}
+_____________________________________________________
+05_Check Armstrong Number
+_____________________________________________________
+#include <stdio.h>
+
+int power(int a, int b) {
+    int ans = 1;
+    for (int i = 0; i < b; i++) {
+        ans *= a;
+    }
+    return ans;
+}
+
+int isAms(int n) {
+    int n1 = n;
+    int p = 0;
+
+    while (n1 != 0) {
+        p++;
+        n1 /= 10;
+    }
+
+    int ans = 0;
+    int n2 = n;
+
+    while (n2 != 0) {
+        int rem = n2 % 10;
+        ans += power(rem, p);
+        n2 /= 10;
+    }
+
+    return ans;
+}
+
+int main() {
+    int n = 153;
+    int result = isAms(n);
+
+    if (result == n) {
+        printf("%d Armstrong\n", n);
+    } else {
+        printf("%d Not Armstrong", n);
+    }
+
+    return 0;
+}
+_________________________________________________________
+6. Perfect Number
+_________________________________________________________
+#include <stdio.h>
+
+int isPerfect(int n) {
+    int sum = 0;
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0)
+            sum += i;
+    }
+    return sum;
+}
+
+int main() {
+    int n = 28;
+    int result = isPerfect(n);
+
+    if (result == n) {
+        printf("%d Perfect\n", n);
+    } else {
+        printf("%d Not Perfect\n", n);
+    }
+
+    return 0;
+}
+____________________________________________________________
+7. Factorial
+____________________________________________________________
+#include <stdio.h>
+
+int main() {
+    int n = 5;
+    int fact = 1;
+
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    printf("%d\n", fact);
+    return 0;
+}
+_____________________________________________________________
+8. Strong Number
+_____________________________________________________________
+#include <stdio.h>
+
+int fact(int n) {
+    int res = 1;
+    for (int i = 1; i <= n; i++) {
+        res *= i;
+    }
+    return res;
+}
+
+int isStrong(int n) {
+    int temp = n, sum = 0;
+
+    while (n != 0) {
+        int d = n % 10;
+        sum += fact(d);
+        n /= 10;
+    }
+
+    return sum;
+}
+
+int main() {
+    int n = 145;
+    int result = isStrong(n);
+
+    if (result == n) {
+        printf("%d Strong\n", n);
+    } else {
+        printf("%d Not Strong\n", n);
+    }
+
+    return 0;
+}
+_________________________________________________________________________
+9. Palindrome
+_________________________________________________________________________
+#include <stdio.h>
+
+int main() {
+    int n = 121;
+    int temp = n;
+    int rev = 0;
+
+    while (n != 0) {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
+    }
+
+    if (rev == temp) {
+        printf("Palindrome");
+    } else {
+        printf("Not Palindrome");
+    }
+
+    return 0;
+}
+________________________________________________________________________________
+10. Sum of First and Last Digit
+________________________________________________________________________________
+#include <stdio.h>
+
+int main() {
+    int n = 12345;
+    int l = n % 10;
+    int f = n;
+
+    while (f >= 10) {
+        f /= 10;
+    }
+
+    int sum = f + l;
+
+    printf("%d", sum);
+    return 0;
+}
+__________________________________________________________________________________
