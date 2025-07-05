@@ -1,1 +1,167 @@
+1. Simple Calculator 
+---------------------------------------------
+#include <stdio.h>
+int main() {
+    int a, b;
+    char opt;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    printf("Enter operator (+, -, *, /, %%): ");
+    scanf(" %c", &opt);  // space before %c is important bez when we press enter after int value \n remains in input buffer
+    switch(opt) {
+        case '+': printf("Result = %d\n", a + b); break;
+        case '-': printf("Result = %d\n", a - b); break;
+        case '*': printf("Result = %d\n", a * b); break;
+        case '/':
+            if (b != 0)
+                printf("Result = %d\n", a / b);
+            else
+                printf("Cannot divide by zero\n");
+            break;
+        case '%':
+            if (b != 0)
+                printf("Result = %d\n", a % b);
+            else
+                printf("Cannot divide by zero\n");
+            break;
+        default:
+            printf("Invalid operator\n");
+    }
+    return 0;
+}
+-------------------
+2. Type of Triangle
+-------------------
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("Enter three sides: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a == b && b == c)
+        printf("Equilateral Triangle\n");
+    else if (a == b || b == c || a == c)
+        printf("Isosceles Triangle\n");
+    else
+        printf("Scalene Triangle\n");
+
+    return 0;
+}
+3. Greatest of Three Numbers (Nested if-else)
+----------------------------------------------
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a > b) {
+        if (a > c)
+            printf("%d is greatest\n", a);
+        else
+            printf("%d is greatest\n", c);
+    } else {
+        if (b > c)
+            printf("%d is greatest\n", b);
+        else
+            printf("%d is greatest\n", c);
+    }
+
+    return 0;
+}
+4. Show Result Based on Marks
+-----------------------------
+#include <stdio.h>
+
+int main() {
+    int marks;
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+
+    if (marks > 75)
+        printf("Distinction\n");
+    else if (marks > 65)
+        printf("First Class\n");
+    else if (marks > 55)
+        printf("Second Class\n");
+    else if (marks >= 40)
+        printf("Pass Class\n");
+    else
+        printf("Fail\n");
+
+    return 0;
+}
+5. Student Discount Based on Purchase
+-------------------------------------
+#include <stdio.h>
+
+int main() {
+    float price, discount = 0;
+    char isStudent;
+
+    printf("Enter price: ");
+    scanf("%f", &price);
+
+    printf("Are you a student? (y/n): ");
+    scanf(" %c", &isStudent);
+
+    if (isStudent == 'y' || isStudent == 'Y') {
+        if (price > 500)
+            discount = price * 0.20;
+        else
+            discount = price * 0.10;
+    } else {
+        if (price > 600)
+            discount = price * 0.15;
+        else
+            discount = 0;
+    }
+
+    printf("Final price after discount: ₹%.2f\n", price - discount);
+    return 0;
+}
+6. Divisibility by 3 or 5
+-------------------------
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n % 3 == 0 && n % 5 == 0)
+        printf("Divisible by both\n");
+    else if (n % 3 == 0)
+        printf("Divisible by 3 but not by 5\n");
+    else if (n % 5 == 0)
+        printf("Divisible by 5 but not by 3\n");
+    else
+        printf("Divisible by None\n");
+
+    return 0;
+}
+7. Age Group Classification
+---------------------------
+#include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter age: ");
+    scanf("%d", &age);
+
+    if (age < 12)
+        printf("Child\n");
+    else if (age >= 12 && age <= 19)
+        printf("Teenager\n");
+    else if (age >= 20 && age <= 59)
+        printf("Adult\n");
+    else
+        printf("Senior\n");
+
+    return 0;
+}
+
+
 
